@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let num = Math.floor(Math.random() * 100);
+        let max = 100;
+        let min = 0;
+        function func(){
+            let q = parseInt(document.getElementById("q_num").value); 
+            if (q > num){
+                document.getElementById("UPorDOWN").textContent = "DOWN.";
+                max = q;
+            } else if (q < num){
+                document.getElementById("UPorDOWN").textContent = "UP."; 
+                min = q;
+            } else {
+                document.getElementById("UPorDOWN").textContent = "정답입니다."; 
+            }
+            document.getElementById("much").textContent = min + " < x > " + max; 
+        }
+    </script>
+</head>
+<body>
+    <h1>숫자 맞추기 (업다운)게임</h1>
+    <form>
+        숫자 입력 : <input id="q_num"> 
+        <input type="button" id="sub" value="확인" onclick="func()"> <br>
+    </form>
+    <p id="UPorDOWN"></p> <br>
+    <p id="much"></p>
+</body>
+</html>
